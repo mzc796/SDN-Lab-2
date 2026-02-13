@@ -17,8 +17,8 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 [PICOS 4.4.3 Configuration G](https://pica8-fs.atlassian.net/wiki/spaces/PicOS443sp/overview?homepageId=10453009)
 
 [OpenDaylight Flow Examples](https://docs.opendaylight.org/projects/openflowplugin/en/latest/users/flow-examples.html)
-## Install OpenDaylight
-
+## Build a complete SDN testbed
+1. Install OpenDaylight
 > (1) Download OpenDaylight Calcium
   ```
   wget https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.1/karaf-0.20.1.zip
@@ -33,24 +33,51 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   vim setenv
   ```
 > (4) Add the following to the setenv file
-  
   ```
   export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
   ```
-4. Run OpenDaylight and Install OpenFlow Plugins
-> (1) Run OpenDaylight
+2. Run OpenDaylight
+> (1) In a system terminal:
   ```
   sudo ./karaf
   ```
-> (2) Install OpenFlow Plugins in OpenDaylight terminal `opendaylight-user@root>`:
+3. Connect Mininet to OpenDaylight
+> (1) Run Mininet with Customized Topology and Connect to Controller
   ```
-  feature:install odl-openflowplugin-app-topology-lldp-discovery odl-openflowplugin-app-table-miss-enforcer odl-openflowplugin-flow-services odl-openflowplugin-flow-services-rest odl-openflowplugin-app-topology-manager odl-openflowplugin-app-lldp-speaker
+  sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
   ```
-> (3) Check Listening Ports
->
-> Open another terminal
-> 
+> Question: Is the connection successful? How to debug?
+> (2) Check Listening Ports. Open another terminal
   ```
   sudo lsof -i -P -n | grep LISTEN
   ```
-  NOTE: If ```tcp *:6653 (LISTEN)``` and ```tcp *:8181 (LISTEN)``` do not show, shut down OpenDaylight with ```Control+D``` and restart ```sudo ./karaf```
+> Question: What do you observe?
+> (3) Install OpenFlow Plugins in OpenDaylight terminal `opendaylight-user@root>`:
+  ```
+  feature:install odl-openflowplugin-app-topology-lldp-discovery odl-openflowplugin-app-table-miss-enforcer odl-openflowplugin-flow-services odl-openflowplugin-flow-services-rest odl-openflowplugin-app-topology-manager odl-openflowplugin-app-lldp-speaker
+  ```
+> NOTE: If ```tcp *:6653 (LISTEN)``` and ```tcp *:8181 (LISTEN)``` do not show, shut down OpenDaylight with ```Control+D``` and restart ```sudo ./karaf```
+> (4) Check Listening Ports again.
+  ```
+  sudo lsof -i -P -n | grep LISTEN
+  ```
+> (5) Re-run Mininet:
+  ```
+  sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
+  ``` 
+4. Run Mininet with Customized Topology and Connect to Remote Controller with $IP_ODL
+  ``` 
+  cd marionette_odl/mininet_fattree
+  sudo chmod 774 fattree_mn_run.sh dump_flows.sh
+  sudo ./fattree_mn_run.sh $IP_ODL
+  ```
+  NOTE: The $IP_ODL can be known with the command ```ifconfig``` on OpenDaylight VM.
+
+  If the connection between ODL and mininet is successful, the mininet terminal shows: 
+  ```
+  *** Creating network
+  *** Adding controller
+  *** Adding hosts:
+  ...
+  ```
+  Otherwise, there will be ``Unable to connect the remote controller at $IP_ODL`` after ``*** Adding controller``
