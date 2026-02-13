@@ -45,18 +45,32 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   ```
   sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
   ```
-> Question: Is the connection successful? How to debug?
+> NOTE: We can also have a remote controller building in another VM. If so, we connect Mininet to the remote controller with the $IP_ODL of that VM.
+  The $IP_ODL can be known with the command ```ifconfig``` on the OpenDaylight VM.
+  
+> Question: Is the connection successful? 
+> If the connection between ODL and mininet is successful, the mininet terminal shows: 
+  ```
+  *** Creating network
+  *** Adding controller
+  *** Adding hosts:
+  ...
+  ```
+> Otherwise, there will be ``Unable to connect the remote controller at $IP_ODL`` after ``*** Adding controller``
+> How to debug?
 > 
 > (2) Check Listening Ports. Open another terminal
   ```
   sudo lsof -i -P -n | grep LISTEN
   ```
 > Question: What do you observe?
+> 
 > (3) Install OpenFlow Plugins in OpenDaylight terminal `opendaylight-user@root>`:
   ```
   feature:install odl-openflowplugin-app-topology-lldp-discovery odl-openflowplugin-app-table-miss-enforcer odl-openflowplugin-flow-services odl-openflowplugin-flow-services-rest odl-openflowplugin-app-topology-manager odl-openflowplugin-app-lldp-speaker
   ```
 > NOTE: If ```tcp *:6653 (LISTEN)``` and ```tcp *:8181 (LISTEN)``` do not show, shut down OpenDaylight with ```Control+D``` and restart ```sudo ./karaf```
+> 
 > (4) Check Listening Ports again.
   ```
   sudo lsof -i -P -n | grep LISTEN
@@ -64,20 +78,5 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > (5) Re-run Mininet:
   ```
   sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
-  ``` 
-4. Run Mininet with Customized Topology and Connect to Remote Controller with $IP_ODL
-  ``` 
-  cd marionette_odl/mininet_fattree
-  sudo chmod 774 fattree_mn_run.sh dump_flows.sh
-  sudo ./fattree_mn_run.sh $IP_ODL
   ```
-  NOTE: The $IP_ODL can be known with the command ```ifconfig``` on OpenDaylight VM.
-
-  If the connection between ODL and mininet is successful, the mininet terminal shows: 
-  ```
-  *** Creating network
-  *** Adding controller
-  *** Adding hosts:
-  ...
-  ```
-  Otherwise, there will be ``Unable to connect the remote controller at $IP_ODL`` after ``*** Adding controller``
+> Question: Is the connection successful this time?
