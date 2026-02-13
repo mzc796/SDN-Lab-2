@@ -17,11 +17,11 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 [OpenDaylight Flow Examples](https://docs.opendaylight.org/projects/openflowplugin/en/latest/users/flow-examples.html)
 ## Install OpenDaylight
 
-(1) Download OpenDaylight Calcium
+> (1) Download OpenDaylight Calcium
   ```
   wget https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.1/karaf-0.20.1.zip
   ```
->  (2) Extract it to $HOME
+> (2) Extract it to $HOME
   ```
   unzip karaf-0.20.1.zip
   ```
