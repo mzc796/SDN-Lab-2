@@ -36,8 +36,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   ```
   export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
   ```
-2. Run OpenDaylight
-> (1) In a system terminal:
+2. Run OpenDaylight. In a system terminal:
   ```
   sudo ./karaf
   ```
