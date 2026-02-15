@@ -86,5 +86,16 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > ```
 > Question: Which interface do we monitor?
 > 
-5. Read statistics from the northbound API of OpenDaylight
+5. Read network statistics from the northbound API of OpenDaylight
+> (1) Read nodes (switches)
+> Refer to `read_nodes.sh`
+> 
+> (2) Read topology
+> Refer to `read_topo.sh`
+>
+> (3) Read config data store
+> Refer to `read_config_table.sh`
+>
+> (4) Read operational data store
+> Refer to `read_operational_table.sh`
 > 
