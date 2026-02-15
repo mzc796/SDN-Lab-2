@@ -1,5 +1,5 @@
 # SDN-Lab-2
-Connect OpenDaylight with mininet to configure flow entries
+Connect OpenDaylight with mininet
 
 Continue with what we had on previous lab, we will install OpenDaylight as the SDN controller to connect with Mininet to configure the network. 
 ## Virtual Machine Summary
@@ -80,3 +80,11 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
   ```
 > Question: Is the connection successful this time?
+4. Capture OpenFlow messages
+> ```
+> sudo wireshark
+> ```
+> Question: Which interface do we monitor?
+> 
+5. Read statistics from the northbound API of OpenDaylight
+> 
