@@ -109,6 +109,8 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > 
 > Refer to `read_topo.sh`
 >
+> Read topology file
+>
 > (4) Request the operational data store of a switch
 > 
 > Refer to `read_operational_table.sh`
