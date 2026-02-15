@@ -48,7 +48,8 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > NOTE: We can also have a remote controller building in another VM. If so, we connect Mininet to the remote controller with the $IP_ODL of that VM.
   The $IP_ODL can be known with the command ```ifconfig``` on the OpenDaylight VM.
   
-> Question: Is the connection successful? 
+> Question: Is the connection successful?
+> 
 > If the connection between ODL and mininet is successful, the mininet terminal shows: 
   ```
   *** Creating network
@@ -80,6 +81,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
   ```
 > Question: Is the connection successful this time?
+> 
 4. Capture OpenFlow messages
 > ```
 > sudo wireshark
@@ -87,25 +89,27 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > Question: Which interface do we monitor?
 > 
 5. Read network statistics from the northbound API of OpenDaylight
+>
 > (1) Create `data` folder
 > 
 > ```mkdir data```
 > 
-> (1) Read nodes (switches)
+> (2) Read nodes (switches)
 > 
 > Refer to `read_nodes.sh`
 > 
 > ```sudo vim data/nodes.sh```
-> In vim, press `Ctrl`+`:`, then type `%!jq .` for better json file reading. 
-> (2) Read topology
+> In vim, press `Ctrl`+`:`, then type `%!jq .` for better json file reading.
+> 
+> (3) Read topology
 > 
 > Refer to `read_topo.sh`
 >
-> (3) Read operational data store
+> (4) Read operational data store
 > 
 > Refer to `read_operational_table.sh`
 > 
-> (4) Read config data store
+> (5) Read config data store
 > 
 > Refer to `read_config_table.sh`
 >
