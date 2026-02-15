@@ -92,7 +92,9 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > 
 > (1) Create `data` folder. In a terminal,
 > 
-> ```mkdir data```
+> ```
+> mkdir data
+> ```
 > 
 > (2) Request nodes (switches)
 > 
