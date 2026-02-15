@@ -1,7 +1,7 @@
 # SDN-Lab-2
 Connect OpenDaylight with mininet
 
-Continue with what we had on previous lab, we will install OpenDaylight as the SDN controller to connect with Mininet to configure the network. 
+Continue with what we had on previous lab, we will install OpenDaylight as the SDN controller to connect with Mininet to read the network statistics. 
 ## Virtual Machine Summary
 Memory: >= 8GB
 
