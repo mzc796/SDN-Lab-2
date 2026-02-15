@@ -94,23 +94,33 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > 
 > ```mkdir data```
 > 
-> (2) Read nodes (switches)
+> (2) Request nodes (switches)
 > 
 > Refer to `read_nodes.sh`
 > 
-> ```sudo vim data/nodes.sh```
+> Read nodes file:
+> ```
+> sudo vim data/nodes.sh
+> ```
 > 
 > In vim, press `Ctrl`+`:`, then type `%!jq .` for better json file reading.
 > 
-> (3) Read topology
+> (3) Request topology
 > 
 > Refer to `read_topo.sh`
 >
-> (4) Read operational data store
+> (4) Request the operational data store of a switch
 > 
 > Refer to `read_operational_table.sh`
 > 
-> (5) Read config data store
+> Question: What value do we put as the variable? 
+> 
+> Read the operational_table file, keep in mind what you see.
+> 
+> (5) Request the config data store of the same switch
 > 
 > Refer to `read_config_table.sh`
->
+> 
+> Read the config_table file, keep in mind what you see.
+> 
+> Question: Why?
