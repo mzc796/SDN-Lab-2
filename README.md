@@ -89,8 +89,8 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > Question: Which interface do we monitor?
 > 
 5. Read network statistics from the northbound API of OpenDaylight
->
-> (1) Create `data` folder
+> 
+> (1) Create `data` folder. In a terminal,
 > 
 > ```mkdir data```
 > 
@@ -99,6 +99,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > Refer to `read_nodes.sh`
 > 
 > ```sudo vim data/nodes.sh```
+> 
 > In vim, press `Ctrl`+`:`, then type `%!jq .` for better json file reading.
 > 
 > (3) Read topology
