@@ -19,24 +19,25 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 [OpenDaylight Flow Examples](https://docs.opendaylight.org/projects/openflowplugin/en/latest/users/flow-examples.html)
 ## Build a complete SDN testbed
 1. Install and Configure Java
-  (1) Install Java
-  ```
-  sudo apt-get install openjdk-17-jdk
-  ```
-  (2) Configure JAVA_HOME to /etc/profile
+   
+   (1) Install Java
+   ```
+   sudo apt-get install openjdk-17-jdk
+   ```
+   (2) Configure JAVA_HOME to /etc/profile
 
-  ```
-  sudo vim /etc/profile
-  ```
-> (3) Add the following to the end of /etc/profile
-  ```
-  JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-  PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
-  export JAVA_HOME
-  export JRE_HOME
-  export PATH
-  ```
-> (4) Make JAVE_HOME valid and Test JAVA Version
+   ```
+   sudo vim /etc/profile
+   ```
+   (3) Add the following to the end of /etc/profile
+   ```
+   JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+   PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+   export JAVA_HOME
+   export JRE_HOME
+   export PATH
+   ```
+   (4) Make JAVE_HOME valid and Test JAVA Version
   ```
   source /etc/profile
   java -version
