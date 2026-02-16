@@ -164,4 +164,4 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
  
    Question: Why?
 
-  (4) Configure a flow entry on the mininet end, repeat (1)(2)(3) steps, reason about the config data store & nonconfig data store design of OpenDaylight.
+   (4) Configure a flow entry on the mininet end, repeat (1)(2)(3) steps, reason about the config data store & nonconfig data store design of OpenDaylight.
