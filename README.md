@@ -67,7 +67,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 4. Connect Mininet to OpenDaylight
 > (1) Run Mininet with Customized Topology and Connect to Controller
   ```
-  sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
+  sudo mn --custom ~/custom_mn/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
   ```
 > NOTE: We can also have a remote controller building in another VM. If so, we connect Mininet to the remote controller with the $IP_ODL of that VM.
   The $IP_ODL can be known with the command ```ifconfig``` on the OpenDaylight VM.
@@ -103,7 +103,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > 
 > (5) Re-run Mininet:
   ```
-  sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
+  sudo mn --custom ~/custom_mn/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
   ```
 > Question: Is the connection successful this time?
 > 
@@ -134,14 +134,14 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > 
 > (3) Request topology
 > 
-> Refer to `read_topo.sh`
+> Refer to `odl/read_topo.sh`
 >
 > Read topology file
 >
 7. Config Data Store & Nonconfig Data Store
 > (1) Request the data store of a switch
 >
-> Refer to `read_flows.sh`, we will need to figure out what to put as a variable following `read_flows.sh`. 
+> Refer to `odl/read_flows.sh`, we will need to figure out what to put as a variable following `./read_flows.sh`. 
 > 
 > Question: What value do we put as the variable?
 >
@@ -149,13 +149,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > 
 > (2) Request the nonconfig data store of a switch
 > 
-> Refer to `read_nonconfig_flows.sh`
+> Refer to `odl/read_nonconfig_flows.sh`
 > 
 > Read the `nonconfig_flows.json` file, keep in mind what you see.
 > 
 > (3) Request the config data store of the same switch
 > 
-> Refer to `read_config_flows.sh`
+> Refer to `odl/read_config_flows.sh`
 > 
 > Read the `config_flows.json` file, keep in mind what you see.
 > 
