@@ -113,18 +113,27 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 >
 > Read topology file
 >
-> (4) Request the operational data store of a switch
+6. Config Data Store & Nonconfig Data Store
+> (1) Request the data store of a switch
 > 
-> Refer to `read_operational_table.sh`
+> Refer to `read_flows.sh`
 > 
-> Question: What value do we put as the variable? 
+> Question: What value do we put as the variable?
+>
+> Read the `flows.json` file, keep in mind what you see.
 > 
-> Read the operational_table file, keep in mind what you see.
+> (2) Request the nonconfig data store of a switch
 > 
-> (5) Request the config data store of the same switch
+> Refer to `read_nonconfig_flows.sh`
 > 
-> Refer to `read_config_table.sh`
+> Read the `nonconfig_flows.json` file, keep in mind what you see.
 > 
-> Read the config_table file, keep in mind what you see.
+> (3) Request the config data store of the same switch
+> 
+> Refer to `read_config_flows.sh`
+> 
+> Read the `config_flows` file, keep in mind what you see.
 > 
 > Question: Why?
+>
+> (4) Configure a flow entry on the mininet, repeat (1)(2)(3) steps, reason about the config data store & nonconfig data store design of OpenDaylight.
