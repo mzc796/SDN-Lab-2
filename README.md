@@ -42,7 +42,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   java -version
   ```
 
-1. Install OpenDaylight
+2. Install OpenDaylight
 > (1) Download OpenDaylight Calcium
   ```
   wget https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.1/karaf-0.20.1.zip
@@ -60,11 +60,11 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   ```
   export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
   ```
-2. Run OpenDaylight. In a system terminal:
+3. Run OpenDaylight. In a system terminal:
   ```
   sudo ./karaf
   ```
-3. Connect Mininet to OpenDaylight
+4. Connect Mininet to OpenDaylight
 > (1) Run Mininet with Customized Topology and Connect to Controller
   ```
   sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
@@ -106,13 +106,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   ```
 > Question: Is the connection successful this time?
 > 
-4. Capture OpenFlow messages
+5. Capture OpenFlow messages
 > ```
 > sudo wireshark
 > ```
 > Question: Which interface do we monitor?
 > 
-5. Read network statistics from the northbound API of OpenDaylight
+6. Read network statistics from the northbound API of OpenDaylight
 > 
 > (1) Create `data` folder. In a terminal,
 > 
@@ -137,7 +137,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 >
 > Read topology file
 >
-6. Config Data Store & Nonconfig Data Store
+7. Config Data Store & Nonconfig Data Store
 > (1) Request the data store of a switch
 > 
 > Refer to `read_flows.sh`
