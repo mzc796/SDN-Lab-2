@@ -132,7 +132,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 > 
 > Refer to `read_config_flows.sh`
 > 
-> Read the `config_flows` file, keep in mind what you see.
+> Read the `config_flows.json` file, keep in mind what you see.
 > 
 > Question: Why?
 >
