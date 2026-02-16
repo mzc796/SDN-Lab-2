@@ -140,8 +140,8 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 >
 7. Config Data Store & Nonconfig Data Store
 > (1) Request the data store of a switch
-> 
-> Refer to `read_flows.sh`
+>
+> Refer to `read_flows.sh`, we will need to figure out what to put as a variable following `read_flows.sh`. 
 > 
 > Question: What value do we put as the variable?
 >
