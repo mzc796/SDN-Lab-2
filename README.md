@@ -126,7 +126,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
  
    (2) Request nodes (switches)
  
-   Refer to `read_nodes.sh`
+   Refer to `req_nodes.sh`
  
    Read nodes file:
    ```
@@ -137,14 +137,14 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
  
    (3) Request topology
  
-   Refer to `odl/read_topo.sh`
+   Refer to `odl/req_topo.sh`
 
    Read topology file
 
 7. Config Data Store & Nonconfig Data Store
    (1) Request the data store of a switch
 
-   Refer to `odl/read_flows.sh`, we will need to figure out what to put as a variable following `./read_flows.sh`. 
+   Refer to `odl/req_flows.sh`, we will need to figure out what to put as a variable following `./req_flows.sh`. 
  
    Question: What value do we put as the variable?
 
@@ -152,13 +152,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 
    (2) Request the nonconfig data store of a switch
  
-   Refer to `odl/read_nonconfig_flows.sh`
+   Refer to `odl/req_nonconfig_flows.sh`
  
    Read the `nonconfig_flows.json` file, keep in mind what you see.
  
    (3) Request the config data store of the same switch
  
-   Refer to `odl/read_config_flows.sh`
+   Refer to `odl/req_config_flows.sh`
  
    Read the `config_flows.json` file, keep in mind what you see.
  
