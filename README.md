@@ -142,6 +142,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    Read topology file
 
 7. Config Data Store & Nonconfig Data Store
+   
    (1) Request the data store of a switch
 
    Refer to `odl/req_flows.sh`, we will need to figure out what to put as a variable following `./req_flows.sh`. 
