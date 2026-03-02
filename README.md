@@ -1,7 +1,27 @@
 # SDN-Lab-2
-Connect OpenDaylight with mininet
+
+Attribution: This lab uses OpenDaylight (Karaf distribution) and Mininet. OpenDaylight is licensed under the Eclipse Public License (EPL). Mininet is distributed under its respective license. This repository contains lab instructions and scripts for educational use.
 
 Continue with what we had on previous lab, we will install OpenDaylight as the SDN controller to connect with Mininet to read the network statistics. 
+
+## Learning Objectives
+
+By the end of this lab, students will be able to:
+
+* Deploy an SDN testbed by installing and launching OpenDaylight and connecting a Mininet topology using OpenFlow 1.3.
+
+* Verify controller–switch connectivity by checking listening ports (e.g., 6653 for OpenFlow and 8181 for RESTCONF) and interpreting Mininet connection messages.
+
+* Enable required OpenDaylight features (OpenFlow plugin, topology discovery, table-miss enforcer, REST services) and explain why a controller may appear “running” but not accept OpenFlow connections until plugins are installed.
+
+* Capture and identify OpenFlow control traffic (e.g., HELLO/FEATURES requests, PACKET_IN/PACKET_OUT) using Wireshark and select the correct interface/namespace to monitor.
+
+* Query OpenDaylight northbound APIs to retrieve network state (nodes, topology, flows) and interpret JSON responses using tools like jq.
+
+* Distinguish OpenDaylight data stores by comparing config vs operational (non-config) flow state, and explain why flow entries may appear in one but not the other.
+
+* Reason about SDN control-plane workflow: how southbound events (switch connect, discovery, packet-in) propagate into controller state and become visible through northbound APIs.
+
 ## Virtual Machine Summary
 Memory: >= 8GB
 
